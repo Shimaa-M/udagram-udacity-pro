@@ -33,9 +33,9 @@ jobs:
             - checkout
             - aws-cli/setup
             - run:
-                name: Back-End deploy
-                command: |
-                  npm run frontend:deploy
+                  name: Back-End deploy
+                  command: |
+                    npm run frontend:deploy
     deploy-backend:
         docker:
             - image: "cimg/base:stable"
@@ -44,17 +44,17 @@ jobs:
             - checkout
             - aws-cli/setupb
             - node/with-cache:
-                            steps:
-                                - run:
-                                    name: Installing deployment dependencies
-                                    command: |
-                                        sudo apt-get -y -qq update
-                                        sudo apt install python-pip python-dev build essential
-                                        sudo pip install --upgrade setuptools
-                                        sudo pip install awsebcli --upgrade
-                     - run:
-                          name: Back-End deploy
-                          command: |
+                  steps:
+                       - run:
+                            name: Installing deployment dependencies
+                            command: |
+                                sudo apt-get -y -qq update
+                                sudo apt install python-pip python-dev build essential
+                                sudo pip install --upgrade setuptools
+                                sudo pip install awsebcli --upgrade
+                       - run:
+                            name: Back-End deploy
+                            command: |
                                npm run backend:deploy                
 workflow:
    version 2

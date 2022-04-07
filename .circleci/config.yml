@@ -33,7 +33,7 @@ jobs:
             - checkout
             - aws-cli/setup
             - run:
-                  name: Back-End deploy
+                  name: front-End deploy
                   command: |
                     npm run frontend:deploy
     deploy-backend:

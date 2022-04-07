@@ -34,8 +34,8 @@ jobs:
             - aws-cli/setup
             - run:
                 name: Back-End deploy
-                  command: |
-                    npm run frontend:deploy
+                command: |
+                  npm run frontend:deploy
     deploy-backend:
         docker:
             - image: "cimg/base:stable"

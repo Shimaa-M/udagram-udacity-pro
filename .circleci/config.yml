@@ -52,9 +52,9 @@ jobs:
                                 sudo apt install python-pip python-dev build essential
                                 sudo pip install --upgrade setuptools
                                 sudo pip install awsebcli --upgrade
-                                aws configure export aws_access_key_id=ASIAUQCZJGDNY2M3AA4J --profile default
-                                aws configure export AWS_SECRET_ACCESS_KEY=9fhM6jW47M9ynTdB9K1ptDQwx9lMqMB7ZNKZMRAE --profile default
-                                aws configure export aws_region=us-west-1 --profile default
+                                aws configure set aws_access_key_id ASIAUQCZJGDNY2M3AA4J --profile default
+                                aws configure set AWS_SECRET_ACCESS_KEY 9fhM6jW47M9ynTdB9K1ptDQwx9lMqMB7ZNKZMRAE --profile default
+                                aws configure set aws_region us-west-1 --profile default
                        - run:
                             name: Back-End deploy
                             command: |

@@ -67,11 +67,11 @@ workflow:
            - build
            - deploy:
                requires:
-                 - build
-               filters:
-                 branches: 
-                   only:
-                   - master 
+                 - build:
+                      filters:
+                          branches: 
+                                only:
+                                 - master 
                        
                     
                  

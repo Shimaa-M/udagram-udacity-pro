@@ -60,18 +60,17 @@ jobs:
                             name: Back-End deploy
                             command: |
                                npm run backend:deploy                
-workflow:
+workflows:
    version: 2
    build and deploy:
        jobs:
            - build
            - deploy:
                requires:
-                 - build:
-                      filters:
-                          branches: 
-                                only:
-                                 - master 
+                - build
+               filters:
+                 branches: 
+                  only: master 
                        
                     
                  

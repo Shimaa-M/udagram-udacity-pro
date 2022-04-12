@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./wwww",
+    "outDir": "./www",
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",

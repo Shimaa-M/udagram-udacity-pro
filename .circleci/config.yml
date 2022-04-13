@@ -48,27 +48,27 @@ jobs:
                   name: Back-End Build
                   command: |
                     npm run backend:build                
-        -run:
+
             - node/install
             - checkout
             - aws-cli/setup
             - node/with-cache:
-                  steps:
-                       - run:
-                            name: Installing deployment dependencies
-                            command: |
-                                sudo apt-get -y -qq update
-                                sudo apt install python-pip python-dev build essential
-                                sudo pip install --upgrade setuptools
-                                sudo pip install awsebcli --upgrade
-                       - run:
-                            name: front-End deploy
-                            command: |
-                                npm run frontend:deploy         
-                       - run:
-                            name: Back-End deploy
-                            command: |
-                               npm run backend:deploy                
+                    steps:
+                        - run:
+                                name: Installing deployment dependencies
+                                command: |
+                                    sudo apt-get -y -qq update
+                                    sudo apt install python-pip python-dev build essential
+                                    sudo pip install --upgrade setuptools
+                                    sudo pip install awsebcli --upgrade
+            - run:
+                name: front-End deploy
+                command: |
+                        npm run frontend:deploy         
+            - run:
+                name: Back-End deploy
+                command: |
+                        npm run backend:deploy                
 workflows:
    version: 2
    build and deploy:

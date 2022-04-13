@@ -54,13 +54,12 @@ jobs:
 
         steps:
             - checkout
-            - aws-cli/setup:
-                 from: www
-                 to: s3://service-user/
-                 arguments: | # Optional arguments
-                        --acl public-read \
-                        --cache-control "max-age=86400"
-                 overwrite: true # default is false
+            - run:
+                  name: Install aws-cli
+                  command: sudo pip install aws-cli
+            - run:
+                 name: deploy to s3
+                 command: aws s3 sync ./www s3://service-user/
                 
     deploy-backend:
         docker:

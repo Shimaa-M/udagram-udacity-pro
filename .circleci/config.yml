@@ -9,7 +9,6 @@ jobs:
         steps:
             - node/install
             - aws-cli/setup
-            - eb/setup
             - checkout
             - run: node --version
             - run:

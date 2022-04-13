@@ -53,12 +53,13 @@ jobs:
             - image: "cimg/base:stable"
 
         steps:
+            - node/install
             - checkout
             - aws-cli/setup
             - run:
-                 name: deploy to s3
-                 command: aws s3 sync ./www s3://service-user/
-                
+                  name: front-End deploy
+                  command: |
+                    npm run frontend:deploy
     deploy-backend:
         docker:
             - image: "cimg/base:stable"

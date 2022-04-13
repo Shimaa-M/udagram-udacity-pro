@@ -5,11 +5,16 @@ orbs:
 jobs:
     build: 
         docker:
-            - image: "cimg/base:stable"
-        working_directory: ./www   
+            - image: "cimg/base:stable"  
         steps:
             - node/install
             - checkout
+            - persist_to_workspace:
+                # Must be an absolute path, or relative path from working_directory
+                root: www
+                # Must be relative path from root
+                paths:
+                    - echo-output
             - run: node --version
             - run:
                 name: Get and install node version manager.

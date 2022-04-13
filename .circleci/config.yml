@@ -48,16 +48,13 @@ jobs:
             - run:
                   name: Back-End Build
                   command: |
-                    npm run backend:build                
+                    npm run backend:build  
+            - aws-cli/setup              
             - run:
                   name: front-End deploy
                   command: |
                     npm run frontend:deploy
-    deploy-backend:
-        docker:
-            - image: "cimg/base:stable"
-
-        steps:
+    
             - node/install
             - checkout
             - aws-cli/setup:

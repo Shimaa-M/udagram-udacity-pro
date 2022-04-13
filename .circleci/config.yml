@@ -9,7 +9,6 @@ jobs:
         steps:
             - node/install
             - checkout
-            - aws-cli/setup
             - run: node --version
             - run:
                 name: Get and install node version manager.
@@ -33,6 +32,17 @@ jobs:
 
                     echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
                     echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+            - aws/setup        
+            - node/with-cache:
+
+                    steps:
+                        - run:
+                                name: Installing deployment dependencies
+                                command: |
+                                    sudo apt-get -y -qq update
+                                    sudo apt install python-pip python-dev build essential
+                                    sudo pip install --upgrade setuptools
+                                    sudo pip install awsebcli --upgrade
             - run:
                   name: Front-End Install
                   command: |

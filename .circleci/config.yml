@@ -8,11 +8,18 @@ jobs:
             - image: "cimg/base:stable"
             
         steps:
+            - node/install
             - checkout
-            - run:
-                name: install-node
-                command: sudo npm install -g node@16.13.2
             - run: node --version
+            - run:
+                name: Get and install node version manager.
+                command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+            - run:
+                name: Install Node version 12 using NVM
+                command: nvm install 12 
+            - run:
+                name: Use Node version 12 
+                command: nvm use 12  
             - run:
                   name: Front-End Install
                   command: |

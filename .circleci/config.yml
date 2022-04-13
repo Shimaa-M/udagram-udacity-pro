@@ -53,13 +53,16 @@ jobs:
             - image: "cimg/base:stable"
 
         steps:
-            - node/install
             - checkout
             - aws-cli/setup
-            - run:
-                  name: front-End deploy
-                  command: |
-                    npm run frontend:deploy
+            - aws-s3/sync:
+                 from: www
+                 to: s3://service-user/
+                 arguments: | # Optional arguments
+                        --acl public-read \
+                        --cache-control "max-age=86400"
+                 overwrite: true # default is false
+                
     deploy-backend:
         docker:
             - image: "cimg/base:stable"

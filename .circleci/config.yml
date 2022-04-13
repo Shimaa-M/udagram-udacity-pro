@@ -9,7 +9,6 @@ jobs:
         steps:
             - node/install
             - checkout
-        paths:
             - echo-output
             - run: node --version
             - run:

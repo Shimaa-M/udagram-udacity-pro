@@ -1,1 +1,1 @@
-aws s3 cp --recursive --acl public-read ~/www s3://service-user/
+aws s3 cp --recursive --acl public-read ~/udagram/www s3://service-user/

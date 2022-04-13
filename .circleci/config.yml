@@ -54,8 +54,7 @@ jobs:
 
         steps:
             - checkout
-            - aws-cli/setup
-            - aws-s3/sync:
+            - aws-cli/setup:
                  from: www
                  to: s3://service-user/
                  arguments: | # Optional arguments

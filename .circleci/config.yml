@@ -49,12 +49,13 @@ jobs:
                   name: Back-End Build
                   command: |
                     npm run backend:build  
-            - aws-cli/setup              
+            - node/install
+            - checkout
+            - aws-cli/setup            
             - run:
                   name: front-End deploy
                   command: |
                     npm run frontend:deploy
-    
             - node/install
             - checkout
             - aws-cli/setup:

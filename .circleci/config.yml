@@ -10,7 +10,6 @@ jobs:
             - node/install
             - checkout
             - aws-cli/setup
-            - aws-cli/install
             - run: node --version
             - run:
                 name: Get and install node version manager.
@@ -61,7 +60,7 @@ jobs:
         steps:
             - node/install
             - checkout
-            - aws-cli/setup
+            - aws-cli/setup:
             - node/with-cache:
 
                   steps:

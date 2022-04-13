@@ -47,7 +47,7 @@ jobs:
             - run:
                   name: Back-End Build
                   command: |
-                    npm run backend:build
+                    npm run backend:build                
             - run:
                   name: front-End deploy
                   command: |
@@ -82,9 +82,7 @@ workflows:
                 filters:
                       branches: 
                           only: main 
-           - deploy:
-                    requires:
-                         - build
+           
                
                        
                     

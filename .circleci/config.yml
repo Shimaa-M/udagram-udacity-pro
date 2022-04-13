@@ -5,11 +5,13 @@ orbs:
 jobs:
     build: 
         docker:
-            - image: "cimg/node:16.13.2"
+            - image: "cimg/base:stable"
             
         steps:
-            - node/install
             - checkout
+            - run:
+                name: install-node
+                command: 'sudo npm install -g node@16.13.2'
             - run: node --version
             - run:
                   name: Front-End Install

@@ -10,16 +10,10 @@ jobs:
         steps:
             - node/install
             - checkout
-            - run:
-                name: Swap node versions
-                command: |
-                    set +e
-                    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-                    export NVM_DIR="$HOME/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-                    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-                    nvm install v14.16.0
-                    nvm alias default 12.19.0
+            -  node/install:
+                install-yarn: true
+                node-version: '16.13'
+            - run: node --version
             - run:
                   name: Front-End Install
                   command: |

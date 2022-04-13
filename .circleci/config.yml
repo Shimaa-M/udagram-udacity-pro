@@ -52,15 +52,13 @@ jobs:
             - node/install
             - checkout
             - aws-cli/setup
-            - node/with-cache:
-                    steps:
-                        - run:
-                                name: Installing deployment dependencies
-                                command: |
-                                    sudo apt-get -y -qq update
-                                    sudo apt install python-pip python-dev build essential
-                                    sudo pip install --upgrade setuptools
-                                    sudo pip install awsebcli --upgrade
+            - run:
+                name: Installing deployment dependencies
+                command: |
+                        sudo apt-get -y -qq update
+                        sudo apt install python-pip python-dev build essential
+                        sudo pip install --upgrade setuptools
+                        sudo pip install awsebcli --upgrade
             - run:
                 name: front-End deploy
                 command: |

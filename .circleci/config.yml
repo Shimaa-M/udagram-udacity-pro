@@ -9,7 +9,6 @@ jobs:
         steps:
             - node/install
             - checkout
-            - echo-output
             - run: node --version
             - run:
                 name: Get and install node version manager.

@@ -65,7 +65,8 @@ workflows:
    build and deploy:
        jobs:
            - build:
-                  filters:
+                working_directory: ~/www      
+                filters:
                       branches: 
                           only: main 
            - deploy:

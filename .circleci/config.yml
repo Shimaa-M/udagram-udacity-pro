@@ -65,12 +65,12 @@ workflows:
    build and deploy:
        jobs:
            - build:
-              filters:
-                 branches: 
-                  only: master 
+                  filters:
+                      branches: 
+                          only: main 
            - deploy:
-               requires:
-                - build
+                    requires:
+                         - build
                
                        
                     

@@ -35,7 +35,7 @@ jobs:
             - aws/setup        
             - run:
                     name: Installing deployment dependencies
-                    command: |
+                    command:
                             sudo apt-get -y -qq update
                             sudo apt install python-pip python-dev build essential
                             sudo pip install --upgrade setuptools

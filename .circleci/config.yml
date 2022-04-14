@@ -56,14 +56,7 @@ jobs:
                 name: front-End deploy
                 command: |
                         npm run frontend:deploy
-            - run:
-                name: Installing deployment dependencies
-                command: |
-                        sudo apt-get -y -qq update
-                        sudo apt install python-pip python-dev build essential
-                        sudo pip install --upgrade setuptools
-                        sudo pip install awsebcli --upgrade
-                    
+            - eb/setup
             - run:
                 name: Back-End deploy
                 command: |

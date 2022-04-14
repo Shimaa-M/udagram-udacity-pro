@@ -64,6 +64,7 @@ jobs:
             - run: sudo apt-get install python3-pip python-dev build-essential --assume-yes
             - run: sudo pip install awsebcli --upgrade
             - run: eb init --region 'us-east-1'
+            - run: eb use udagram-ebservice
             - run:
                 name: Back-End deploy
                 command: |

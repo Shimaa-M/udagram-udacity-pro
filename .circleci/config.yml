@@ -62,7 +62,7 @@ jobs:
             - run: sudo apt-get -y -qq update --assume-yes
             - run: sudo apt-get install python-pip python-dev build-essential --assume-yes
             - run: sudo pip install awsebcli --upgrade
-            - eb/setup
+
             - run:
                 name: Back-End deploy
                 command: |

@@ -25,6 +25,7 @@ export const app = express();
   app.use(bodyParser.json());
 
   app.use(cors());
+  app.options('*', cors);
 
   app.use("/api/v0/", IndexRouter);
 

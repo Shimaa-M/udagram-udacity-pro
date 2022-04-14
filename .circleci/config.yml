@@ -5,6 +5,7 @@ orbs:
     eb: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
     build: 
+        artifact: www/Archive.zip
         docker:
             - image: "cimg/base:stable"  
         steps:
@@ -45,6 +46,7 @@ jobs:
                   name: Front-End Build
                   command: |
                     npm run frontend:build
+
             - run:
                   name: Back-End Build
                   command: |
@@ -57,6 +59,7 @@ jobs:
                 name: front-End deploy
                 command: |
                         npm run frontend:deploy
+         
             - node/install
             - checkout
             - eb/setup
@@ -64,6 +67,7 @@ jobs:
             - run: sudo apt-get install python3-pip python-dev build-essential --assume-yes
             - run: sudo pip install awsebcli --upgrade
             - run: eb init udagram-ebservice --platform Node.js --region 'us-east-1' 
+       
             - run:
                 name: Back-End deploy
                 command: |

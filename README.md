@@ -56,7 +56,7 @@ Unit tests are using the Jasmine Framework.
 
 The e2e tests are using Protractor and Jasmine.
 
-## Built With
+## App Dependencies
 
 - [Angular](https://angular.io/) - Single Page Application Framework
 - [Node](https://nodejs.org) - Javascript Runtime
@@ -66,5 +66,14 @@ The e2e tests are using Protractor and Jasmine.
 
 [License](LICENSE.txt)
 
-#### CIRCLE CI Process
+### Project infrastructure of AWS
+1- RDS for creating database and the database used is PostgreSQL
+2- Elastic Beanstalk and it's used to deploy backend of project
+3- S3 bucket and it's resposible for host frontend app and produce running link for your website
+4- Pipeline from CIRCLECI to trigger with any change in repository of github and here it's only built with the change of main branch only
 
+#### CIRCLE CI Process
+1- push your code to ithub repository
+2- connect your repo with circleci
+3- make setup sequence in config.yml file
+4- each stack have its (install-built-deploy) script

@@ -68,7 +68,7 @@ jobs:
             - run: sudo apt-get install python3-pip python-dev build-essential --assume-yes
             - run: sudo pip install awsebcli --upgrade
             - run: eb init udagram-ebservice --platform Node.js --region 'us-east-1' 
-       
+            - run: eb setenv PORT=$PORT USERNAME=$USERNAME
             - run:
                 name: Back-End deploy
                 command: |

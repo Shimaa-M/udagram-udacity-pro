@@ -1,1 +1,2 @@
-eb deploy udagram-ebservice
+eb setenv PORT=$PORT USERNAME=$USERNAME
+eb deploy Udagramebservice-env

@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   appName: "Udagram",
-  apiHost: "http://udagramebservice-env.eba-tb3n9xvi.us-east-1.elasticbeanstalk.com/api/v0",
+  apiHost: "http://Udagramebservice-env.eba-tb3n9xvi.us-east-1.elasticbeanstalk.com/api/v0",
 };
 
 /*
@@ -15,4 +15,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+//import 'zone.js/dist/zone-error';  // Included with Angular CLI.

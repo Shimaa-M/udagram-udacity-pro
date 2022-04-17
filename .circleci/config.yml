@@ -46,11 +46,7 @@ jobs:
             - run:
                   name: Front-End Build
                   command: |
-                    npm run frontend:build
-            - run: 
-                  name: Initialize eb
-                  command: |
-                    eb init udagram-ebservice --platform Node.js --region 'us-east-1'    
+                    npm run frontend:build  
             - run:
                   name: Back-End Build
                   command: |
@@ -70,6 +66,10 @@ jobs:
             - run: sudo apt-get -y -qq update --assume-yes
             - run: sudo apt-get install python3-pip python-dev build-essential --assume-yes
             - run: sudo pip install awsebcli --upgrade
+            - run: 
+                  name: Initialize eb
+                  command: |
+                    eb init udagram-ebservice --platform Node.js --region 'us-east-1'  
             - run:
                 name: Back-End deploy
                 command: |

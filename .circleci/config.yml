@@ -47,7 +47,10 @@ jobs:
                   name: Front-End Build
                   command: |
                     npm run frontend:build
-
+            - run: 
+                  name: Initialize eb
+                  command: |
+                    eb init udagram-ebservice --platform Node.js --region 'us-east-1'    
             - run:
                   name: Back-End Build
                   command: |

@@ -1,5 +1,4 @@
-
-eb deploy Udagramebservice-env
+eb deploy udagram-api
 
 
 

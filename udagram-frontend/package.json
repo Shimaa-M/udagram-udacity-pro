@@ -59,7 +59,7 @@
     "typescript": "^3.5.3"
   },
   "engines": {
-    "node": "16.13.0"
+    "node": "14.19.1"
   },
   "description": "An Ionic project"
 }

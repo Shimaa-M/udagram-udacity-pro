@@ -54,5 +54,5 @@
     "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.3.4000"
   },
-   "engines" : { "node" : ">=14.0.0" } 
+   "engines" : { "node" : "14.19.1" } 
 }

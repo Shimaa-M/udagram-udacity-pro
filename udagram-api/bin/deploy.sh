@@ -1,6 +1,6 @@
 eb init udagram-ebservice --platform Node.js --region 'us-east-1'  
 eb setenv PORT=3000 USERNAME=aws-cli 
-eb deploy Udagramebservice-api
+eb deploy Udagramebservice-env
 
 
 

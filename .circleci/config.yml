@@ -3,13 +3,7 @@ orbs:
     node: circleci/node@4.1.0
     aws-cli: circleci/aws-cli@1.3.1
     eb: circleci/aws-elastic-beanstalk@2.0.1
-environment:
-    PORT:3000
-    USERNAME:aws-cli 
-    URL:postgres://postgres:Saeed7abiby@database-1.cfxas0fk51uq.us-east-1.rds.amazonaws.com:5432/udagram_db 
-    AWS_REGION:us-east-1a 
-    JWT_SECRET:i-love-programming
-    AWS_BUCKET:service-user 
+ 
 jobs:
 
     build: 

@@ -1,6 +1,6 @@
 eb init udagram-ebservice --platform Node.js --region 'us-east-1'  
-eb setenv PORT=3000 USERNAME=aws-cli URL=postgres://postgres:Saeed7abiby@database-1.cfxas0fk51uq.us-east-1.rds.amazonaws.com:5432/udagram_db AWS_REGION=us-east-1a JWT_SECRET=i-love-programming
-eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=Saeed7abiby POSTGRES_DB=udagram_db POSTGRES_PORT=5432 POSTGRES_HOST=localhost AWS_BUCKET=service-user 
+eb setenv PORT=$PORT USERNAME=$USERNAME URL=$URL AWS_REGION=$AWS_REGION JWT_SECRET=$JWT_SECRET
+eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB POSTGRES_PORT=$POSTGRES_PORT POSTGRES_HOST=$POSTGRES_HOST AWS_BUCKET=$AWS_BUCKET 
 eb deploy Udagramebservice-env
 
 
